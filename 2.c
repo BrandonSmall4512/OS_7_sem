@@ -28,7 +28,7 @@ typedef struct {
     double completion_time; // Время завершения обслуживания
 } DiskRequest;
 
-// Статистика
+
 typedef struct {
     double min_time;
     double max_time;
@@ -60,7 +60,7 @@ double calculate_transfer_time(int num_sectors, int operation) {
     return (operation == 1) ? base_time * 2 : base_time;
 }
 
-// --- Генерация случайных запросов ---
+
 DiskRequest* generate_requests(double t_max, int n, int* total_requests) {
     int max_requests = (int)(SIMULATION_TIME / (t_max * 1000)) * 2;
     DiskRequest* requests = malloc(max_requests * sizeof(DiskRequest));
